@@ -2,6 +2,7 @@
 const dotenv = require('dotenv');
 const app = require("./app");
 
+dotenv.config({path:"./config.env"});
 const Router = require('./routers/contentRouter');
 
 app.use('/', Router);
@@ -25,6 +26,6 @@ dotenv.config({path:"./config.env"});
 // }))
 
 
-app.listen(4000, ()=>{
-    console.log("Server is running at port 4000");
+app.listen(process.env.PORT, ()=>{
+    console.log(`Server is running at port ${process.env.PORT}`);
 })

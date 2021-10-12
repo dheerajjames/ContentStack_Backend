@@ -1,8 +1,10 @@
 // import * as contentstack from 'contentstack';
 const contentstack = require('contentstack');
+const dotenv = require('dotenv');
+dotenv.config({path:"../config.env"});
 
 
-const Stack = contentstack.Stack("blt98440613fdc79fff","cs8af1bb3390bd2e6a7e4fa5b3", "dheerajdevelopment");
+const Stack = contentstack.Stack(process.env.API_KEY,process.env.DELIVERY_KEY, process.env.ENVIRONMENT);
 
 
 const getNav = async (req, res) =>{
